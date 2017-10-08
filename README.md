@@ -44,7 +44,7 @@ update function to initialize its value.
 ### How to use it
 
 The code includes the improved solution for the latest version of the module
-dev branch (7.x-3.x) and corresponding patch.
+dev branch (7.x-3.x) and corresponding patch (applied in 2nd commit).
 
 ### Original source
 
