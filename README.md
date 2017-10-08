@@ -3,7 +3,7 @@
 This is enhanced version of the Drupal 7 module nodeviewcount, solving some
 security issues.
 
-###Problems
+### Problems
 
 The original module implementation allows any person knowing a user and node
 id to write in DB a new view record through the menu element:
