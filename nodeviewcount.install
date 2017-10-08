@@ -51,6 +51,7 @@ function nodeviewcount_install() {
   variable_set('nodeviewcount_user_roles', array());
   variable_set('nodeviewcount_way_counting', NODEVIEWCOUNT_PHP_WAY_COUNT_VIEWS);
   variable_set('nodeviewcount_flush_log_timer', 0);
+  nodeviewcount_update_7212();
 }
 
 /**
@@ -61,6 +62,7 @@ function nodeviewcount_uninstall() {
   variable_del('nodeviewcount_user_roles');
   variable_del('nodeviewcount_way_counting');
   variable_del('nodeviewcount_flush_log_timer');
+  variable_del('nodeviewcount_secret_key');
 }
 
 /**
@@ -79,4 +81,11 @@ function nodeviewcount_update_7211() {
       return t('Index already exist');
     }
   }
+}
+
+/**
+ * Create initial secret key, used to generate validation URL tokens.
+ */
+function nodeviewcount_update_7212() {
+  variable_set('nodeviewcount_secret_key', drupal_random_key());
 }

@@ -113,6 +113,13 @@ function nodeviewcount_admin_settings_form($form, &$form_state) {
     '#options' => $options_views_intervals,
     '#default_value' => variable_get('nodeviewcount_views_limit', 0),
   );
+  $form['nodeviewcount_secret_key'] = array(
+    '#title' => t('Secret key'),
+    '#description' => t('Secret key used to generate tokens for URL validation.'),
+    '#type' => 'textfield',
+    '#required' => TRUE,
+    '#default_value' => variable_get('nodeviewcount_secret_key', 'SECRET_KEY'),
+  );
   $form['#submit'][] = 'nodeviewcount_admin_settings_form_submit';
   $form = system_settings_form($form);
   return $form;
